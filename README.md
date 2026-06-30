@@ -1,130 +1,88 @@
-# ESP32-Smart-Home-Automation-using-DHT22-and-Buzzer
-ESP32 Environmental Monitoring & Alert System
-An ESP32-based IoT simulation project built in Wokwi to monitor temperature and humidity using a DHT22 sensor and trigger visual and audio alerts through an LED and buzzer when thresholds are exceeded. The project demonstrates basic embedded logic, sensor reading, and alert automation in a browser-based simulation environment.
-wokwi
-+2
+- **Project Title:** ESP32 Environmental Monitoring & Alert System.
+- **Project Type:** ESP32-based IoT simulation project built in Wokwi.
+- **Main Purpose:** Monitor temperature and humidity and trigger visual and audio alerts when values cross a limit.
+- **Why this project:** To detect sudden environmental changes automatically instead of checking values manually.
 
-Project Overview
-This project reads environmental data from a DHT22 sensor connected to an ESP32.
-If the temperature goes above 30°C or humidity goes above 70%, the system turns on an LED and activates a buzzer.
-The values are printed continuously on the Serial Monitor for real-time observation.
-wokwi
-+1
+- **Project Overview:**
+- Reads temperature and humidity from a DHT22 sensor.
+- Compares the readings with threshold values.
+- Turns on an LED and buzzer when limits are exceeded.
+- Shows live values on the Serial Monitor.
 
-Features
-ESP32-based simulation.
+- **Features:**
+- ESP32-based simulation.
+- DHT22 temperature monitoring.
+- DHT22 humidity monitoring.
+- LED alert system.
+- Buzzer alert system.
+- Real-time serial output.
+- Simulation testing without physical hardware.
 
-DHT22 temperature and humidity monitoring.
+- **Problem Statement:**
+- Sudden changes in temperature and humidity can be missed in manual monitoring.
+- This can cause discomfort or unsafe environmental conditions.
+- The system solves this by giving automatic alerts.
 
-LED alert when threshold is crossed.
+- **Components Used and Why:**
+- **ESP32:** Main microcontroller that reads sensor data and controls alerts.
+- **DHT22 sensor:** Used because it measures both temperature and humidity in one sensor.
+- **LED:** Used as a simple visual alert indicator.
+- **Buzzer:** Used to give an audio alert when thresholds are crossed.
+- **Breadboard and jumper wires:** Used for easy circuit connections in the Wokwi simulation.
 
-Buzzer alert when threshold is crossed.
+- **DHT22 Features:**
+- Measures both temperature and humidity.
+- Digital sensor, so it gives easy-to-read output.
+- Suitable for IoT and automation projects.
+- Useful for environmental monitoring.
+- Easy to simulate in Wokwi.
+- Helps test logic without real hardware.
 
-Real-time serial output.
+- **How It Works:**
+- ESP32 reads data from the DHT22 sensor.
+- The values are printed every 2 seconds.
+- If temperature is above 30°C or humidity is above 70%, the LED turns ON.
+- The buzzer also turns ON using `tone()`.
+- When values return to normal, both alerts turn OFF.
 
-Tested in Wokwi without physical hardware.
-wokwi
-+2
+- **Simulation:**
+- Built and tested using Wokwi ESP32 simulator.
+- No physical components are needed for testing.
+- Sensor values can be changed during simulation.
+- This helps verify the code and circuit before hardware implementation.
 
-Problem Statement
-In many environments, sudden changes in temperature or humidity can go unnoticed, leading to discomfort or unsafe conditions.
-This project solves that by automatically detecting high temperature or humidity and generating alerts using an ESP32-based embedded system.
-ijraset
-+1
+- **File Structure:**
+- `sketch.ino` for the code.
+- `diagram.json` for the circuit layout.
+- `libraries.txt` for required libraries.
+- `README.md` for project documentation.
+- `wokwi.toml` if Wokwi configuration is needed.
 
-Components Used
-ESP32.
+- **Code Logic:**
+- If temperature or humidity is too high, turn alerts ON.
+- Otherwise, turn alerts OFF.
 
-DHT22 sensor.
+- **How To Run:**
+- Open the project in Wokwi.
+- Start the simulation.
+- Check temperature and humidity in Serial Monitor.
+- Change sensor values to test alert behavior.
+- Observe the LED and buzzer response.
 
-LED.
+- **Future Scope:**
+- Add relay control for fan or appliance automation.
+- Add PIR motion sensor for security.
+- Add LCD/OLED display for local readings.
+- Add Wi-Fi and cloud dashboard support.
+- Convert the simulation into a real hardware prototype.
 
-Buzzer.
-
-Breadboard and jumper wires in Wokwi simulation.
-wokwi
-+1
-
-How It Works
-The ESP32 reads temperature and humidity from the DHT22 sensor.
-
-The values are printed to the Serial Monitor every 2 seconds.
-
-If temperature is greater than 30°C or humidity is greater than 70%, the LED turns ON.
-
-The buzzer also turns ON using the tone() function.
-
-When values go back to normal, both alerts turn OFF.
-wokwi
-+1
-
-Simulation
-This project was developed and tested using the Wokwi ESP32 simulator.
-You can run the simulation directly in Wokwi using the project files in this repository.
-The simulation is based on the same workflow used in Wokwi ESP32 example projects and documentation.
-github
-+2
-
-File Structure
-
-bash
-.
-├── sketch.ino
-├── diagram.json
-├── libraries.txt
-├── README.md
-└── wokwi.toml   # optional, if you add Wokwi config
-Code Logic
-
-cpp
-if (t > TEMP_HIGH_C || h > HUM_HIGH_PCT) {
-  digitalWrite(LED_PIN, HIGH);
-  tone(BUZZER_PIN, 1800);
-} else {
-  digitalWrite(LED_PIN, LOW);
-  noTone(BUZZER_PIN);
-}
-How To Run
-Open the project in Wokwi.
-
-Start the simulation.
-
-Observe temperature and humidity values in the Serial Monitor.
-
-Change sensor values to test the alert condition.
-
-Watch the LED and buzzer react to threshold crossing.
-wokwi
-+2
-
-Future Scope
-Add relay control for fan or appliance automation.
-
-Add PIR motion sensor for smart home security.
-
-Add LCD/OLED display for local status.
-
-Add Wi-Fi and cloud dashboard integration.
-
-Convert the simulation into a physical prototype later.
-wokwi
-+2
-
-Internship Relevance
-This project demonstrates:
-
-ESP32 programming.
-
-Sensor interfacing.
-
-Threshold-based automation.
-
-Embedded logic.
-
-Simulation-based development.
-
-Real-time monitoring and alert generation 
-
+- **Internship Relevance:**
+- Shows ESP32 programming skills.
+- Demonstrates sensor interfacing.
+- Uses threshold-based automation.
+- Includes embedded logic and debugging.
+- Shows simulation-based development.
+- Demonstrates real-time monitoring and alert generation.
 
 
 
